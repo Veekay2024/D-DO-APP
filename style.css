@@ -99,7 +99,7 @@ form{
   position:absolute;
   top:0;
   right:0;
-  background-color:var(--accent-color);
+  background-color: rgb(51, 149, 182);
   height:100%;
   padding:1.5rem 3rem;
   border:none;
@@ -107,7 +107,7 @@ form{
   font-size: 1.6rem;
   font:inherit;
   font-weight:600;
-  color: rgb(37, 110, 119);
+  color:#ffff;
   cursor:pointer;
   transition: all 0.3s ease;
 }
