@@ -107,7 +107,7 @@ form{
   font-size: 1.6rem;
   font:inherit;
   font-weight:600;
-  color:var(--background);
+  color: rgb(37, 110, 119);
   cursor:pointer;
   transition: all 0.3s ease;
 }
