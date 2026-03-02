@@ -8,55 +8,83 @@
 *{
   margin:0;
   padding:0;
+  box-sizing:border-box;
 }
 html{
   font-family:'segoe ui', Tahoma, Geneva, Verdana, sans-serif;
-  font-size:16pt;
+  font-size:62.5%;
   color:var(--text-color);
+  scroll-behavior: smooth;
 }
 body{
   min-height:100vh;
-  padding:10px;
+  padding:2rem;
   background-color:var(--background);
   display:flex;
   flex-direction:column;
   align-items:center;
 }
+
+/* HEADING */
 h1{
-  margin-top:100px;
-  margin-bottom:20px;
-  font-size:3rem;
+  /* margin-top:10rem; */
+  margin-top:5rem;
+  /* margin-bottom:2rem; */
+  margin-bottom:3rem;
+  /* font-size:3rem; */
+  font-size: clamp(2.4rem, 5vw, 4rem);
   font-weight:800;
   text-transform:uppercase;
   text-align:center;
   color:var(--accent-color);
   text-shadow:0 0 10px var(--accent-color), 0 0 2px var(--accent-color), 0 0 2px var(--accent-color), 0 0 1px var(--accent-color), 0 0 2px var(--accent-color), 0 0 2px var(--accent-color), 0 0 3px var(--accent-color);
+  letter-spacing: 2px;
+  padding: 0 2rem;
 }
+/* HEADING-END */
+
+/* WRAPPER */
 .wrapper{
-  width:700px;
-  max-width:100%;
+  /* width:70rem; */
+  width:100%;
+  /* max-width:100%; */
+  max-width:70rem;
   display:flex;
   flex-direction:column;
-  gap:10px;
+  /* gap:10px; */
+  gap: 1.5rem;
+  padding: 0 1rem;
 }
+/* WRAPPER-END */
+
+/* FORM & INPUT */
 #todo-input{
-  box-sizing:border-box;
-  padding:12px 20px;
+  /* box-sizing:border-box; */
+  /* padding:1.2rem 2rem; */
+  flex: 1;
+  padding:1.5rem 2.5rem;
   width:100%;
-  background:none;
+  /* background:none; */
+  background: var(--primary-color); 
   border:2px solid var(--secondary-color);
-  border-radius:1000px;
+  border-radius:100rem;
   font:inherit;
+  font-size: 1.6rem;
   color:var(--text-color);
   caret-color:var(--accent-color);
+  transition: all 0.3s ease;
 }
 #todo-input:focus{
   outline:none; 
   /*border:2px solid var(--accent-color);
   box-shadow:0 0 5px var(--secondary-color);*/
 }
+
 form{
   position:relative;
+  Width:100%;
+  display:flex;
+  gap:1rem;
 }
 #add-button{
   position:absolute;
@@ -64,31 +92,74 @@ form{
   right:0;
   background-color:var(--accent-color);
   height:100%;
-  padding:0 30px;
+  padding:1.5rem 3rem;
   border:none;
-  border-radius:1000px;
+  border-radius:100rem;
+  font-size: 1.6rem;
   font:inherit;
   font-weight:600;
   color:var(--background);
   cursor:pointer;
+  transition: all 0.3s ease;
 }
+
+#add-button:hover {
+  transform: translateY(-2px);
+}
+
+#add-button:active {
+  transform: translateY(0);
+}
+/* FORM & INPUT END */
+
+/* TODO-ITEM */
 .todo{
-  margin-bottom:10px;
-  padding:0 16px;
+  margin-bottom:1rem;
+  padding:0 1.6rem;
   background-color:var(--primary-color);
-  border-radius:15px;
+  border-radius:1.5rem;
   display:flex;
   align-items:center;
-  gap: 12px; /* optional: adds consistent spacing betweeen items*/
+  gap: 1.2rem; /* optional: adds consistent spacing betweeen items*/
   justify-content:space-between; /* this pushes items to the edges */
   height:auto; /*let content define height*/
+}
+
+#todo-input{
+  display: flex;
+  
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 0.8rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  #todo-input,
+  #add-button {
+    padding: 1.3rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+  .todo {
+    padding: 1rem 1.2rem;
+  }
+
+  .todo .todo-text {
+    font-size: 1.4rem;
+  }
 }
 
 .todo .todo-text{
   flex-grow: 1;
   min-width:0; /*allows ellipsis inside flex item*/
-  padding:15px 0; /* vertical padding for text */
+  padding:1.5rem 0; /* vertical padding for text */
   padding-right:0;
+  font-size: 1.6rem;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
@@ -105,7 +176,7 @@ form{
   cursor:pointer;
   flex-shrink:0;
   border-radius : 5px;
-  margin-left:40px;/* optional:small spacing before button*/
+  margin-left:4rem;/* optional:small spacing before button*/
 }
 .delete-button svg{
   transition:200ms ease;
@@ -116,8 +187,8 @@ form{
 .custom-checkbox{
 border:2px solid var(--accent-color);
 border-radius: 50%;
-min-height: 20px;
-min-width: 20px;
+min-height: 2rem;
+min-width: 2rem;
 display:flex;
 justify-content:center;
 align-items: center;
@@ -138,23 +209,11 @@ input[type="checkbox"]:checked ~ .todo-text{
 input[type="checkbox"]{
   display:none;
 }
-@media(max-width: 500px){
-   html{
-      font-size: 12pt;
-   }
-   #add-button{
-    position: unset;
-    width: 100%;
-    margin-top: 10px;
-    padding: 15px;
-    height: auto; 
-   }
-   h1{
-     margin-top: 50px;
-     font-size: 15vw;
-   }
-}
-  
+
+
+
+
+   
   
   
 
